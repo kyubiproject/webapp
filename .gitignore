@@ -1,0 +1,10 @@
+*.*
+!.gitignore
+!*.json
+!*.md
+!*.php
+
+./*
+/vendor
+/runtime/*
+/public/assets/*
