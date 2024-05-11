@@ -1,0 +1,51 @@
+{
+	"name" : "kyubi/app",
+	"description" : "Web scaffold for Kyubi app",
+	"type" : "project",
+	"keywords" : [
+		"Kyubi",
+		"PHP",
+		"Framework"
+	],
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Rafael J Torres",
+			"email" : "rafaelt88@gmail.com",
+			"role" : "Creator & developer"
+		}
+	],
+	"minimum-stability" : "dev",
+	"prefer-stable" : true,
+	"repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "ajaxorg/ace-builds",
+                "version": "dev-master",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/ajaxorg/ace-builds/archive/refs/heads/master.zip"
+                }
+            }
+        },
+        {
+			"type" : "path",
+			"url" : "/var/www/kyubi/*"
+		}
+	],
+	"require" : {
+		"kyubi/admin" : "@dev"
+	},
+	"require-dev" : {
+		"kyubi/studio" : "@dev",
+		"yiisoft/yii2-debug" : "^2.1"
+	},
+	"scripts" : {
+		"post-install-cmd" : "php -r 'unlink(\"kyubi\");symlink(\"./vendor/bin/kyubi\",\"kyubi\");'"
+	},
+	"config": {
+		"allow-plugins": {
+			"yiisoft/yii2-composer": true
+		}
+	}
+}
