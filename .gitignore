@@ -1,0 +1,11 @@
+/.*
+!.gitignore
+!.htaccess
+
+*.lock
+*.phar
+
+kyubi
+/vendor
+/runtime/*
+/public/assets/*
